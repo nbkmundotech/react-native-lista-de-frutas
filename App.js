@@ -1,11 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
 import Main from './components/Main';
 import reducer from './reducer';
 
-const store = createStore(reducer);
+const store = configureStore({
+  reducer: reducer
+});
 
 class App extends React.Component {
   render() {
